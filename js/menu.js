@@ -9,6 +9,11 @@ function menuButtonListener() {
 	let menuDiv = document.getElementById("menu_div");
 
 	button.addEventListener("click", () => {
+
+		if (menuDiv.style.display === "none") {
+			menuDiv.style.display = "block";
+		}
+
 		button.classList.toggle("active");
 		menuDiv.classList.toggle("menu_div_active");
 
@@ -20,5 +25,9 @@ function menuButtonListener() {
 				liElements[i].classList.toggle("hide_item");
 			}, i * 50);
 		}
+
+		// if (menuDiv.style.display !== "none") {
+		// 	menuDiv.style.display = "none";
+		// }
 	});
 }

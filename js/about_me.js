@@ -10,9 +10,13 @@ function firstLoadAnimations() {
 	let header = document.getElementById("about_me_header");
 	let secondaryHeader = document.getElementById("secondary_header");
 	let paragraph = document.getElementById("about_me_paragraph");
-	let sphere = document.getElementById("canvas_div");
+	let sphere = document.getElementById("sphere");
 
-	
+	setTimeout(() => (header.classList.remove("hide_about_me_header")), 250);
+	setTimeout(() => (secondaryHeader.classList.remove("hide_secondary_header")), 500);
+	setTimeout(() => (paragraph.classList.remove("hide_about_me_paragraph")), 750);
+	setTimeout(() => (sphere.classList.remove("hide_sphere")), 250);
+
 }
 
 function sphereAnimation() {

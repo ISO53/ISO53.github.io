@@ -27,7 +27,6 @@ function wheelListener() {
 			}
 
 			const angle = Math.atan2(event.clientY - wheelCenter.y, event.clientX - wheelCenter.x);
-			// console.log(angle);
 			wheel.style.transform = `rotate(${angle}rad)`;
 		});
 	}
