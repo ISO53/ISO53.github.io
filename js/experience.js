@@ -66,4 +66,38 @@ function firstLoadAnimations() {
 	setTimeout(() => paragraph.classList.remove("hide_experience_paragraph"), 750);
 }
 
-function loadExperiences() {}
+function loadExperiences() {
+	let experiencesDiv = document.getElementById("experiences_list_div");
+
+	experiences.forEach((experience) => {
+		// Main div for each experience
+		let expDiv = document.createElement("div");
+		expDiv.className = "exp_div";
+		experiencesDiv.appendChild(expDiv);
+
+		// Top div for image, company name and position
+		let topDiv = document.createElement("div");
+		topDiv.className = "top_exp_div";
+		expDiv.appendChild(topDiv);
+
+		// Top left div for image
+		let topLeftDiv = document.createElement("div");
+		topLeftDiv.className = "top_left_exp_div";
+		topDiv.appendChild(topLeftDiv);
+
+		// Company logo image
+		let image = document.createElement("img");
+		image.src = experience.img;
+		topLeftDiv.appendChild(image);
+		
+		// Top right div for company name and position
+		let topRightDiv = document.createElement("div");
+		topRightDiv.className = "top_right_exp_div";
+		topDiv.appendChild(topRightDiv);
+
+		// Bottom div for short description paragraph
+		let bottomDiv = document.createElement("div");
+		bottomDiv.className = "bottom_exp_div";
+		expDiv.appendChild(bottomDiv);
+	});
+}
