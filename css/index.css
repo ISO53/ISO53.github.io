@@ -462,3 +462,69 @@ path:nth-child(6) {
 	opacity: 0;
 	transform: translateY(-20px);
 }
+
+.experience_button_div {
+	width: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-left: 20px;
+}
+
+.experience_button {
+	border: 3px solid rgba(200, 200, 200, 0.4);
+	background-color: transparent;
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	color: rgba(200, 200, 200, 0.4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 35px;
+	font-weight: 900;
+	cursor: pointer;
+
+	transition: border-color 250ms ease, color 250ms ease;
+}
+
+.experience_button:hover {
+	border-color: rgba(200, 200, 200, 0.8);
+	color: rgba(200, 200, 200, 0.8);
+}
+
+.experience_button:first-child {
+	margin-bottom: 10px;
+}
+
+.experience_button:last-child {
+	margin-top: 10px;
+}
+
+.up {
+	transform: translateY(8px);
+}
+
+.down {
+	transform: translateY(-14px);
+}
+
+.experiences_list_wrapper {
+	width: 40%;
+	margin-right: 20px;
+	overflow: hidden;
+	user-select: none;
+}
+
+.experiences_list_div {
+	transition: transform 250ms ease;
+}
+
+.exp_div {
+	width: auto;
+	height: 150px;
+	overflow: hidden;
+	border: 1px solid rgba(200, 200, 200, 0.2);
+	margin: 25px;
+}

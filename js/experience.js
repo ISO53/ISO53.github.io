@@ -50,10 +50,12 @@ const experiences = [
 		end_date: "April 2022",
 	},
 ];
+const LIST_SIZE = experiences.length;
 
 // ************************ JS Starts ************************
 loadExperiences();
 firstLoadAnimations();
+interactiveExperiencesScrollBar();
 
 // ******************** Declare Functions ********************
 function firstLoadAnimations() {
@@ -89,7 +91,7 @@ function loadExperiences() {
 		let image = document.createElement("img");
 		image.src = experience.img;
 		topLeftDiv.appendChild(image);
-		
+
 		// Top right div for company name and position
 		let topRightDiv = document.createElement("div");
 		topRightDiv.className = "top_right_exp_div";
@@ -100,4 +102,39 @@ function loadExperiences() {
 		bottomDiv.className = "bottom_exp_div";
 		expDiv.appendChild(bottomDiv);
 	});
+}
+
+function interactiveExperiencesScrollBar() {
+	let up = document.getElementById("experience_up");
+	let down = document.getElementById("experience_down");
+	let list = document.getElementById("experiences_list_div");
+	let wrapper = document.getElementById("experiences_list_wrapper");
+
+	const step = 150 + 25; // 150px height + 50px margin
+	const startPos = wrapper.offsetHeight / 2 - step / 2 - 12.5;
+
+	let current = startPos;
+	let index = 0;
+
+	list.style.transform = "translateY(" + current + "px)";
+
+	up.addEventListener("click", () => {
+		if (index - 1 >= 0) {
+			current += step;
+			list.style.transform = "translateY(" + current + "px)";
+			index--;
+		}
+	});
+
+	down.addEventListener("click", () => {
+		if (index + 1 < LIST_SIZE) {
+			current -= step;
+			list.style.transform = "translateY(" + current + "px)";
+			index++;
+		}
+	});
+
+	function adjustOtherDivs() {
+		
+	}
 }
