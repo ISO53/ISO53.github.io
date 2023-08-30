@@ -56,6 +56,7 @@ const LIST_SIZE = experiences.length;
 loadExperiences();
 firstLoadAnimations();
 interactiveExperiencesScrollBar();
+hoverAnimationOnExperiences();
 
 // ******************** Declare Functions ********************
 function firstLoadAnimations() {
@@ -154,7 +155,7 @@ function interactiveExperiencesScrollBar() {
 			current += step;
 			list.style.transform = "translateY(" + current + "px)";
 			index--;
-			
+
 			adjustOtherDivs();
 		}
 	});
@@ -164,7 +165,7 @@ function interactiveExperiencesScrollBar() {
 			current -= step;
 			list.style.transform = "translateY(" + current + "px)";
 			index++;
-			
+
 			adjustOtherDivs();
 		}
 	});
@@ -185,7 +186,7 @@ function interactiveExperiencesScrollBar() {
 			list.children[index - 1].style.opacity = "60%";
 		}
 
-		if (index + 2 < LIST_SIZE) {			
+		if (index + 2 < LIST_SIZE) {
 			list.children[index + 2].style.transform = "scale(" + 80 + "%)";
 			list.children[index + 2].style.opacity = "20%";
 		}
@@ -195,4 +196,21 @@ function interactiveExperiencesScrollBar() {
 			list.children[index - 2].style.opacity = "20%";
 		}
 	}
+}
+
+function hoverAnimationOnExperiences() {
+	document.querySelectorAll(".exp_div").forEach((b) => {
+		b.onmouseleave = (e) => {
+			e.target.style.background = "black";
+			e.target.style.borderImage = null;
+		};
+
+		b.addEventListener("mousemove", (e) => {
+			const rect = b.getBoundingClientRect();
+			const x = e.clientX - rect.left; //x position within the element.
+			const y = e.clientY - rect.top; //y position within the element.
+			b.style.background = `radial-gradient(circle at ${x}px ${y}px , rgba(255,255,255,0.2),rgba(255,255,255,0) )`;
+			b.style.borderImage = `radial-gradient(20% 75% at ${x}px ${y}px ,rgba(255,255,255,0.7),rgba(255,255,255,0.1) ) 1 / 1px / 0px stretch `;
+		});
+	});
 }
