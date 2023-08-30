@@ -90,6 +90,7 @@ function loadExperiences() {
 		// Company logo image
 		let image = document.createElement("img");
 		image.src = experience.img;
+		image.className = "company_logo";
 		topLeftDiv.appendChild(image);
 
 		// Top right div for company name and position
@@ -97,10 +98,39 @@ function loadExperiences() {
 		topRightDiv.className = "top_right_exp_div";
 		topDiv.appendChild(topRightDiv);
 
+		// Company name
+		let compName = document.createElement("h2");
+		compName.className = "comp_name_exp";
+		compName.innerHTML = experience.company;
+		topRightDiv.appendChild(compName);
+
+		// Position
+		let positionName = document.createElement("h2");
+		positionName.className = "position_exp";
+		positionName.innerHTML = experience.position;
+		topRightDiv.appendChild(positionName);
+
+		// Div for date range
+		let dateDiv = document.createElement("div");
+		dateDiv.className = "date_exp_div";
+		expDiv.appendChild(dateDiv);
+
+		// Date range
+		let date = document.createElement("h3");
+		date.className = "date_exp";
+		date.innerHTML = experience.start_date + " - " + experience.end_date;
+		dateDiv.appendChild(date);
+
 		// Bottom div for short description paragraph
 		let bottomDiv = document.createElement("div");
 		bottomDiv.className = "bottom_exp_div";
 		expDiv.appendChild(bottomDiv);
+
+		// Short description paragraph
+		let shortParagraph = document.createElement("p");
+		shortParagraph.className = "short_exp_paragraph";
+		shortParagraph.innerHTML = experience.short_desc;
+		bottomDiv.appendChild(shortParagraph);
 	});
 }
 
@@ -117,12 +147,15 @@ function interactiveExperiencesScrollBar() {
 	let index = 0;
 
 	list.style.transform = "translateY(" + current + "px)";
+	adjustOtherDivs();
 
 	up.addEventListener("click", () => {
 		if (index - 1 >= 0) {
 			current += step;
 			list.style.transform = "translateY(" + current + "px)";
 			index--;
+			
+			adjustOtherDivs();
 		}
 	});
 
@@ -131,10 +164,35 @@ function interactiveExperiencesScrollBar() {
 			current -= step;
 			list.style.transform = "translateY(" + current + "px)";
 			index++;
+			
+			adjustOtherDivs();
 		}
 	});
 
 	function adjustOtherDivs() {
-		
+		for (let i = 0; i < list.children.length; i++) {
+			list.children[i].style.transform = "none";
+			list.children[i].style.opacity = "1";
+		}
+
+		if (index + 1 < LIST_SIZE) {
+			list.children[index + 1].style.transform = "scale(" + 90 + "%)";
+			list.children[index + 1].style.opacity = "60%";
+		}
+
+		if (index - 1 >= 0) {
+			list.children[index - 1].style.transform = "scale(" + 90 + "%)";
+			list.children[index - 1].style.opacity = "60%";
+		}
+
+		if (index + 2 < LIST_SIZE) {			
+			list.children[index + 2].style.transform = "scale(" + 80 + "%)";
+			list.children[index + 2].style.opacity = "20%";
+		}
+
+		if (index - 2 >= 0) {
+			list.children[index - 2].style.transform = "scale(" + 80 + "%)";
+			list.children[index - 2].style.opacity = "20%";
+		}
 	}
 }
