@@ -11,7 +11,7 @@ const experiences = [
 	},
 	{
 		company: "Perdestanbul - perdestanbul.com",
-		position: "Fullstack Web Developer",
+		position: "Fullstack Developer",
 		img: "res/perdestanbul_logo.png",
 		short_desc: "I led the development for a curtain-selling website using WooCommerce. My focus on secure payment integration, SEO, and cache management enhanced performance and growth.",
 		long_desc:
@@ -63,10 +63,14 @@ function firstLoadAnimations() {
 	let header = document.getElementById("experience_header");
 	let secondaryHeader = document.getElementById("secondary_header");
 	let paragraph = document.getElementById("experience_paragraph");
+	let buttons = document.getElementById("experience_button_div");
+	let experiencesDiv = document.getElementById("experiences_list_wrapper");
 
 	setTimeout(() => header.classList.remove("hide_experience_header"), 250);
 	setTimeout(() => secondaryHeader.classList.remove("hide_secondary_header"), 500);
 	setTimeout(() => paragraph.classList.remove("hide_experience_paragraph"), 750);
+	setTimeout(() => buttons.classList.remove("hide_experience_button_div"), 1000);
+	setTimeout(() => experiencesDiv.classList.remove("hide_experiences_list_wrapper"), 1000);
 }
 
 function loadExperiences() {
@@ -157,6 +161,7 @@ function interactiveExperiencesScrollBar() {
 			index--;
 
 			adjustOtherDivs();
+			loadNewExperience("up");
 		}
 	});
 
@@ -167,6 +172,7 @@ function interactiveExperiencesScrollBar() {
 			index++;
 
 			adjustOtherDivs();
+			loadNewExperience("down");
 		}
 	});
 
@@ -195,6 +201,25 @@ function interactiveExperiencesScrollBar() {
 			list.children[index - 2].style.transform = "scale(" + 80 + "%)";
 			list.children[index - 2].style.opacity = "20%";
 		}
+	}
+
+	function loadNewExperience(direction) {
+		let infoDiv = document.getElementById("information_div");
+
+		infoDiv.style.transform = "translateY(" + (direction === "up" ? "+" : "-") + "15%)";
+		infoDiv.style.opacity = "0";
+
+		setTimeout(() => {
+			document.getElementById("secondary_header").innerHTML = experiences[index].company.split(" ")[0] + " • " + experiences[index].position;
+			document.getElementById("experience_paragraph").innerHTML = experiences[index].long_desc;
+
+			infoDiv.style.transition = "none";
+			infoDiv.style.transform = "translateY(" + (direction === "down" ? "+" : "-") + "15%)";
+
+			infoDiv.style.transition = "transform 500ms ease, opacity 500ms ease";
+			infoDiv.style.transform = "translateY(0%)";
+			infoDiv.style.opacity = "1";
+		}, 500);
 	}
 }
 

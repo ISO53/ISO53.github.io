@@ -262,6 +262,8 @@ path:nth-child(6) {
 	justify-content: center;
 	flex-direction: column;
 	width: 50%;
+
+	transition: transform 500ms ease, opacity 500ms ease;
 }
 
 #c {
@@ -470,6 +472,12 @@ path:nth-child(6) {
 	align-items: center;
 	justify-content: center;
 	margin-left: 20px;
+
+	transition: opacity 3s ease;
+}
+
+.hide_experience_button_div {
+	opacity: 0;
 }
 
 .experience_button {
@@ -515,6 +523,11 @@ path:nth-child(6) {
 	margin-right: 20px;
 	overflow: hidden;
 	user-select: none;
+	transition: opacity 3s ease;
+}
+
+.hide_experiences_list_wrapper {
+	opacity: 0;
 }
 
 .experiences_list_div {
