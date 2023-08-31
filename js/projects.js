@@ -1,5 +1,5 @@
 // ******************** Declare Variables ********************
-const experiences = [
+const projects = [
 	{
 		company: "Deka Technology",
 		position: "Backend Developer",
@@ -25,7 +25,7 @@ const experiences = [
 		img: "res/inceperde_logo.webp",
 		short_desc: "I designed a dynamic curtain sales website using JavaScript, CSS, and HTML. It featured interactivity, SEO optimization, and reliable hosting.",
 		long_desc:
-			"As a freelance web developer, I created a dynamic and responsive website for a curtain sales company using JavaScript, CSS, and HTML. The website included various interactive features to enhance user experience. I also optimized the website for search engines using SEO techniques to increase online visibility and attract more potential customers. Hosting the website on reliable and fast servers ensured maximum uptime and fast loading speeds.",
+			"As a freelance web developer, I created a dynamic and responsive website for a curtain sales company using JavaScript, CSS, and HTML. The website included various interactive features to enhance user project. I also optimized the website for search engines using SEO techniques to increase online visibility and attract more potential customers. Hosting the website on reliable and fast servers ensured maximum uptime and fast loading speeds.",
 		start_date: "March 2023",
 		end_date: "April 2023",
 	},
@@ -35,7 +35,7 @@ const experiences = [
 		img: "res/pia_logo.webp",
 		short_desc: "This internship enhanced my technical skills, especially in areas like backend and web development and database management, which will be valuable in my future work.",
 		long_desc:
-			"Throughout the duration of my internship, I had the opportunity to immerse myself in a diverse array of technologies, ranging from Microservices, Java SpringBoot, Hibernate, and various databases such as PostgreSQL and MongoDB, to integrating with external APIs like the OpenWeatherMap API. Additionally, I honed my web development skills, delving into HTML, CSS, and JavaScript. This invaluable experience has firmly established a robust foundation in these technologies, igniting my enthusiasm to further explore and leverage them in my forthcoming professional undertakings.",
+			"Throughout the duration of my internship, I had the opportunity to immerse myself in a diverse array of technologies, ranging from Microservices, Java SpringBoot, Hibernate, and various databases such as PostgreSQL and MongoDB, to integrating with external APIs like the OpenWeatherMap API. Additionally, I honed my web development skills, delving into HTML, CSS, and JavaScript. This invaluable project has firmly established a robust foundation in these technologies, igniting my enthusiasm to further explore and leverage them in my forthcoming professional undertakings.",
 		start_date: "June 2022",
 		end_date: "July 2022",
 	},
@@ -45,42 +45,43 @@ const experiences = [
 		img: "res/tasarimla_logo.png",
 		short_desc: "I created a product catalog website using HTML, CSS, and JS, hosted it on Natro's reliable platform, and gained Linux-based cPanel expertise.",
 		long_desc:
-			"As part of my journey in web development, I took on the task of creating a dynamic product catalog website. Using a blend of HTML, CSS, and JavaScript, I designed and developed this platform to showcase a range of promotional products. For hosting, I selected dependable and efficient service provider that ensured the website's reliable accessibility. Additionally, I explored Linux-based cPanel administration during this project, which enhanced my skill set. This experience has strengthened my web development skills and expanded my understanding of web hosting, preparing me for future projects in this field.",
+			"As part of my journey in web development, I took on the task of creating a dynamic product catalog website. Using a blend of HTML, CSS, and JavaScript, I designed and developed this platform to showcase a range of promotional products. For hosting, I selected dependable and efficient service provider that ensured the website's reliable accessibility. Additionally, I explored Linux-based cPanel administration during this project, which enhanced my skill set. This project has strengthened my web development skills and expanded my understanding of web hosting, preparing me for future projects in this field.",
 		start_date: "March 2022",
 		end_date: "April 2022",
 	},
 ];
-const LIST_SIZE = experiences.length;
+const LIST_SIZE = projects.length;
 
 // ************************ JS Starts ************************
-loadExperiences();
+loadprojects();
 firstLoadAnimations();
-interactiveExperiencesScrollBar();
+interactiveprojectsScrollBar();
+hoverAnimationOnprojects();
 
 // ******************** Declare Functions ********************
 function firstLoadAnimations() {
-	let header = document.getElementById("experience_header");
+	let header = document.getElementById("project_header");
 	let secondaryHeader = document.getElementById("secondary_header");
-	let paragraph = document.getElementById("experience_paragraph");
-	let buttons = document.getElementById("experience_button_div");
-	let experiencesDiv = document.getElementById("list_wrapper");
+	let paragraph = document.getElementById("project_paragraph");
+	let buttons = document.getElementById("project_button_div");
+	let projectsDiv = document.getElementById("projects_list_wrapper");
 
-	setTimeout(() => header.classList.remove("hide_only_opacity"), 250);
-	setTimeout(() => secondaryHeader.classList.remove("hide"), 500);
-	setTimeout(() => paragraph.classList.remove("hide"), 750);
-	setTimeout(() => buttons.classList.remove("hide"), 1000);
-	setTimeout(() => experiencesDiv.classList.remove("hide"), 1000);
-	setTimeout(() => experiencesDiv.style.transform = "perspective(300px) rotateY(-10deg)", 1250);
+	setTimeout(() => header.classList.remove("hide_project_header"), 250);
+	setTimeout(() => secondaryHeader.classList.remove("hide_secondary_header"), 500);
+	setTimeout(() => paragraph.classList.remove("hide_project_paragraph"), 750);
+	setTimeout(() => buttons.classList.remove("hide_project_button_div"), 1000);
+	setTimeout(() => projectsDiv.classList.remove("hide_projects_list_wrapper"), 1000);
+	setTimeout(() => projectsDiv.style.transform = "perspective(300px) rotateY(-10deg)", 1250);
 }
 
-function loadExperiences() {
-	let experiencesDiv = document.getElementById("list_div");
+function loadprojects() {
+	let projectsDiv = document.getElementById("projects_list_div");
 
-	experiences.forEach((experience) => {
-		// Main div for each experience
+	projects.forEach((project) => {
+		// Main div for each project
 		let expDiv = document.createElement("div");
-		expDiv.className = "slider_box";
-		experiencesDiv.appendChild(expDiv);
+		expDiv.className = "exp_div";
+		projectsDiv.appendChild(expDiv);
 
 		// Top div for image, company name and position
 		let topDiv = document.createElement("div");
@@ -94,7 +95,7 @@ function loadExperiences() {
 
 		// Company logo image
 		let image = document.createElement("img");
-		image.src = experience.img;
+		image.src = project.img;
 		image.className = "company_logo";
 		topLeftDiv.appendChild(image);
 
@@ -106,13 +107,13 @@ function loadExperiences() {
 		// Company name
 		let compName = document.createElement("h2");
 		compName.className = "comp_name_exp";
-		compName.innerHTML = experience.company;
+		compName.innerHTML = project.company;
 		topRightDiv.appendChild(compName);
 
 		// Position
 		let positionName = document.createElement("h2");
 		positionName.className = "position_exp";
-		positionName.innerHTML = experience.position;
+		positionName.innerHTML = project.position;
 		topRightDiv.appendChild(positionName);
 
 		// Div for date range
@@ -123,7 +124,7 @@ function loadExperiences() {
 		// Date range
 		let date = document.createElement("h3");
 		date.className = "date_exp";
-		date.innerHTML = experience.start_date + " - " + experience.end_date;
+		date.innerHTML = project.start_date + " - " + project.end_date;
 		dateDiv.appendChild(date);
 
 		// Bottom div for short description paragraph
@@ -134,16 +135,16 @@ function loadExperiences() {
 		// Short description paragraph
 		let shortParagraph = document.createElement("p");
 		shortParagraph.className = "short_exp_paragraph";
-		shortParagraph.innerHTML = experience.short_desc;
+		shortParagraph.innerHTML = project.short_desc;
 		bottomDiv.appendChild(shortParagraph);
 	});
 }
 
-function interactiveExperiencesScrollBar() {
-	let up = document.getElementById("experience_up");
-	let down = document.getElementById("experience_down");
-	let list = document.getElementById("list_div");
-	let wrapper = document.getElementById("list_wrapper");
+function interactiveprojectsScrollBar() {
+	let up = document.getElementById("project_up");
+	let down = document.getElementById("project_down");
+	let list = document.getElementById("projects_list_div");
+	let wrapper = document.getElementById("projects_list_wrapper");
 
 	const step = 150 + 25; // 150px height + 50px margin
 	const startPos = wrapper.offsetHeight / 2 - step / 2 - 12.5;
@@ -161,7 +162,7 @@ function interactiveExperiencesScrollBar() {
 			index--;
 
 			adjustOtherDivs();
-			loadNewExperience("up");
+			loadNewproject("up");
 		}
 	});
 
@@ -172,7 +173,7 @@ function interactiveExperiencesScrollBar() {
 			index++;
 
 			adjustOtherDivs();
-			loadNewExperience("down");
+			loadNewproject("down");
 		}
 	});
 
@@ -203,15 +204,15 @@ function interactiveExperiencesScrollBar() {
 		}
 	}
 
-	function loadNewExperience(direction) {
+	function loadNewproject(direction) {
 		let infoDiv = document.getElementById("information_div");
 
 		infoDiv.style.transform = "translateY(" + (direction === "up" ? "+" : "-") + "15%)";
 		infoDiv.style.opacity = "0";
 
 		setTimeout(() => {
-			document.getElementById("secondary_header").innerHTML = experiences[index].company.split(" ")[0] + " • " + experiences[index].position;
-			document.getElementById("experience_paragraph").innerHTML = experiences[index].long_desc;
+			document.getElementById("secondary_header").innerHTML = projects[index].company.split(" ")[0] + " • " + projects[index].position;
+			document.getElementById("project_paragraph").innerHTML = projects[index].long_desc;
 
 			infoDiv.style.transition = "none";
 			infoDiv.style.transform = "translateY(" + (direction === "down" ? "+" : "-") + "15%)";
@@ -221,4 +222,21 @@ function interactiveExperiencesScrollBar() {
 			infoDiv.style.opacity = "1";
 		}, 500);
 	}
+}
+
+function hoverAnimationOnprojects() {
+	document.querySelectorAll(".exp_div").forEach((b) => {
+		b.onmouseleave = (e) => {
+			e.target.style.background = "black";
+			e.target.style.borderImage = null;
+		};
+
+		b.addEventListener("mousemove", (e) => {
+			const rect = b.getBoundingClientRect();
+			const x = e.clientX - rect.left; //x position within the element.
+			const y = e.clientY - rect.top; //y position within the element.
+			b.style.background = `radial-gradient(circle at ${x}px ${y}px , rgba(255,255,255,0.2),rgba(255,255,255,0) )`;
+			b.style.borderImage = `radial-gradient(20% 75% at ${x}px ${y}px ,rgba(255,255,255,0.7),rgba(255,255,255,0.1) ) 1 / 1px / 0px stretch `;
+		});
+	});
 }

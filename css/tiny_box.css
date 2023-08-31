@@ -1,0 +1,30 @@
+/* skill_div */
+.tiny_box { 
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	height: 30px;
+	width: fit-content;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3px 12px 3px 12px;
+	margin: 5px;
+	user-select: none;
+
+	transition: border 250ms ease;
+}
+
+.tiny_box:hover {
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.tiny_box:hover .tiny_box_name {
+	color: white;
+}
+
+/* skill_name */
+.tiny_box_name {
+	font-weight: 200;
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.6);
+	transition: color 250ms ease;
+}

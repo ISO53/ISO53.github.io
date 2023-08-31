@@ -1,0 +1,94 @@
+
+.cipher {
+	margin-top: 50px;
+	transition: transform 1s ease, opacity 1s ease;
+}
+
+.wheels {
+	width: 500px;
+	height: 500px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.wheel {
+	position: absolute;
+	border-radius: 100%;
+	margin: 0 auto;
+	user-select: none;
+	transform: rotate(-6.2deg);
+	z-index: 1;
+	cursor: grab;
+}
+
+.wheel_transition {
+	transition: transform 2500ms ease-out;
+}
+
+.wheel:active {
+	cursor: grabbing;
+}
+
+.wheel:hover {
+	filter: brightness(0) saturate(100%) invert(88%) sepia(15%) saturate(6093%) hue-rotate(315deg) brightness(104%) contrast(102%);
+}
+
+.wheel_svg {
+	pointer-events: none;
+}
+
+#wheel_1 {
+	width: 500px;
+	height: 500px;
+}
+
+#wheel_2 {
+	width: 380px;
+	height: 380px;
+	left: 60px;
+	top: 60px;
+}
+
+#wheel_3 {
+	width: 290px;
+	height: 290px;
+	left: 105px;
+	top: 105px;
+}
+
+#wheel_4 {
+	width: 220px;
+	height: 220px;
+	left: 140px;
+	top: 140px;
+}
+
+#wheel_5 {
+	width: 165px;
+	height: 165px;
+	left: 167px;
+	top: 167px;
+}
+
+.cipher_div {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 2;
+}
+
+.cipher_selector {
+	width: 30px;
+	height: 250px;
+	backdrop-filter: brightness(500%);
+	position: absolute;
+	top: 0;
+	left: calc(50% - 15px);
+	transform: perspective(300px) rotateX(-50deg);
+	z-index: 10;
+}
+
+.password {
+	color: white;
+}

@@ -1,0 +1,20 @@
+#c {
+	margin: 0 auto;
+	box-sizing: content-box;
+}
+
+.canvas_div {
+	width: 500px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-self: center;
+}
+
+#sphere {
+	transition: opacity 3s ease-in;
+}
+
+.hide_sphere {
+	opacity: 0;
+}

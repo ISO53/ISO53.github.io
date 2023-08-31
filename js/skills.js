@@ -59,10 +59,10 @@ function firstLoadAnimations() {
 	let paragraph = document.getElementById("skills_paragraph");
 	let skillsDiv = document.getElementById("skills_list_div");
 
-	setTimeout(() => header.classList.remove("hide_skills_header"), 250);
-	setTimeout(() => secondaryHeader.classList.remove("hide_secondary_header"), 500);
-	setTimeout(() => paragraph.classList.remove("hide_skills_paragraph"), 750);
-	setTimeout(() => skillsDiv.classList.remove("hide_skills_list_div"), 1000);
+	setTimeout(() => header.classList.remove("hide_only_opacity"), 250);
+	setTimeout(() => secondaryHeader.classList.remove("hide"), 500);
+	setTimeout(() => paragraph.classList.remove("hide"), 750);
+	setTimeout(() => skillsDiv.classList.remove("hide"), 1000);
 
 }
 
@@ -71,22 +71,22 @@ function loadSkills() {
 
 	for (let i = 0; i < skills.length; i++) {
 		let div = document.createElement("div");
-		div.className = "skill_div";
+		div.className = "tiny_box";
 		skillsDiv.appendChild(div);
 
 		let skillName = document.createElement("h3");
-		skillName.className = "skill_name";
+		skillName.className = "tiny_box_name";
 		skillName.innerHTML = skills[i];
 		div.appendChild(skillName);
 	}
 
 	for (let i = 0; i < skills.length; i++) {
 		let div = document.createElement("div");
-		div.className = "skill_div";
+		div.className = "tiny_box";
 		skillsDiv.appendChild(div);
 
 		let skillName = document.createElement("h3");
-		skillName.className = "skill_name";
+		skillName.className = "tiny_box_name";
 		skillName.innerHTML = skills[i];
 		div.appendChild(skillName);
 	}
