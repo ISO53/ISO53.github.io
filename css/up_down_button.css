@@ -1,5 +1,4 @@
-
-.experience_button {
+.button {
 	border: 3px solid rgba(200, 200, 200, 0.4);
 	background-color: transparent;
 	width: 50px;
@@ -16,7 +15,7 @@
 	transition: border-color 250ms ease, color 250ms ease;
 }
 
-.experience_button:hover {
+.button:hover {
 	border-color: rgba(200, 200, 200, 0.8);
 	color: rgba(200, 200, 200, 0.8);
 }

@@ -52,99 +52,153 @@ const projects = [
 ];
 const LIST_SIZE = projects.length;
 
+const exampleProject = {
+	id: 652569528,
+	node_id: "R_kgDOJuVruA",
+	name: "Backgammon-Game-Server-and-Client",
+	full_name: "ISO53/Backgammon-Game-Server-and-Client",
+	private: false,
+	owner: {
+		login: "ISO53",
+		id: 102249575,
+		node_id: "U_kgDOBhg0Zw",
+		avatar_url: "https://avatars.githubusercontent.com/u/102249575?v=4",
+		gravatar_id: "",
+		url: "https://api.github.com/users/ISO53",
+		html_url: "https://github.com/ISO53",
+		followers_url: "https://api.github.com/users/ISO53/followers",
+		following_url: "https://api.github.com/users/ISO53/following{/other_user}",
+		gists_url: "https://api.github.com/users/ISO53/gists{/gist_id}",
+		starred_url: "https://api.github.com/users/ISO53/starred{/owner}{/repo}",
+		subscriptions_url: "https://api.github.com/users/ISO53/subscriptions",
+		organizations_url: "https://api.github.com/users/ISO53/orgs",
+		repos_url: "https://api.github.com/users/ISO53/repos",
+		events_url: "https://api.github.com/users/ISO53/events{/privacy}",
+		received_events_url: "https://api.github.com/users/ISO53/received_events",
+		type: "User",
+		site_admin: false,
+	},
+	html_url: "https://github.com/ISO53/Backgammon-Game-Server-and-Client",
+	description:
+		"This project consists of a Java server that provides a multiplayer Backgammon game functionality, allowing clients to connect to a room and engage in interactive gameplay, with the client-side implemented using Electron.js.",
+	fork: false,
+	url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client",
+	forks_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/forks",
+	keys_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/keys{/key_id}",
+	collaborators_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/collaborators{/collaborator}",
+	teams_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/teams",
+	hooks_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/hooks",
+	issue_events_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/issues/events{/number}",
+	events_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/events",
+	assignees_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/assignees{/user}",
+	branches_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/branches{/branch}",
+	tags_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/tags",
+	blobs_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/git/blobs{/sha}",
+	git_tags_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/git/tags{/sha}",
+	git_refs_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/git/refs{/sha}",
+	trees_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/git/trees{/sha}",
+	statuses_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/statuses/{sha}",
+	languages_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/languages",
+	stargazers_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/stargazers",
+	contributors_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/contributors",
+	subscribers_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/subscribers",
+	subscription_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/subscription",
+	commits_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/commits{/sha}",
+	git_commits_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/git/commits{/sha}",
+	comments_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/comments{/number}",
+	issue_comment_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/issues/comments{/number}",
+	contents_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/contents/{+path}",
+	compare_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/compare/{base}...{head}",
+	merges_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/merges",
+	archive_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/{archive_format}{/ref}",
+	downloads_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/downloads",
+	issues_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/issues{/number}",
+	pulls_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/pulls{/number}",
+	milestones_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/milestones{/number}",
+	notifications_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/notifications{?since,all,participating}",
+	labels_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/labels{/name}",
+	releases_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/releases{/id}",
+	deployments_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/deployments",
+	created_at: "2023-06-12T10:42:59Z",
+	updated_at: "2023-08-31T13:03:27Z",
+	pushed_at: "2023-06-12T11:22:39Z",
+	git_url: "git://github.com/ISO53/Backgammon-Game-Server-and-Client.git",
+	ssh_url: "git@github.com:ISO53/Backgammon-Game-Server-and-Client.git",
+	clone_url: "https://github.com/ISO53/Backgammon-Game-Server-and-Client.git",
+	svn_url: "https://github.com/ISO53/Backgammon-Game-Server-and-Client",
+	homepage: null,
+	size: 7994,
+	stargazers_count: 1,
+	watchers_count: 1,
+	language: "Java",
+	has_issues: true,
+	has_projects: true,
+	has_downloads: true,
+	has_wiki: true,
+	has_pages: false,
+	has_discussions: false,
+	forks_count: 0,
+	mirror_url: null,
+	archived: false,
+	disabled: false,
+	open_issues_count: 0,
+	license: {
+		key: "gpl-3.0",
+		name: "GNU General Public License v3.0",
+		spdx_id: "GPL-3.0",
+		url: "https://api.github.com/licenses/gpl-3.0",
+		node_id: "MDc6TGljZW5zZTk=",
+	},
+	allow_forking: true,
+	is_template: false,
+	web_commit_signoff_required: false,
+	topics: [],
+	visibility: "public",
+	forks: 0,
+	open_issues: 0,
+	watchers: 1,
+	default_branch: "master",
+};
+
 // ************************ JS Starts ************************
-loadprojects();
+loadProjects();
 firstLoadAnimations();
-interactiveprojectsScrollBar();
-hoverAnimationOnprojects();
+interactiveProjectsScrollBar();
 
 // ******************** Declare Functions ********************
 function firstLoadAnimations() {
-	let header = document.getElementById("project_header");
+	let header = document.getElementById("header");
 	let secondaryHeader = document.getElementById("secondary_header");
-	let paragraph = document.getElementById("project_paragraph");
-	let buttons = document.getElementById("project_button_div");
-	let projectsDiv = document.getElementById("projects_list_wrapper");
+	let paragraph = document.getElementById("main_paragraph");
+	let buttons = document.getElementById("button_div");
+	let projectsDiv = document.getElementById("list_wrapper");
 
-	setTimeout(() => header.classList.remove("hide_project_header"), 250);
-	setTimeout(() => secondaryHeader.classList.remove("hide_secondary_header"), 500);
-	setTimeout(() => paragraph.classList.remove("hide_project_paragraph"), 750);
-	setTimeout(() => buttons.classList.remove("hide_project_button_div"), 1000);
-	setTimeout(() => projectsDiv.classList.remove("hide_projects_list_wrapper"), 1000);
-	setTimeout(() => projectsDiv.style.transform = "perspective(300px) rotateY(-10deg)", 1250);
+	setTimeout(() => header.classList.remove("hide_only_opacity"), 250);
+	setTimeout(() => secondaryHeader.classList.remove("hide"), 500);
+	setTimeout(() => paragraph.classList.remove("hide"), 750);
+	setTimeout(() => buttons.classList.remove("hide"), 1000);
+	setTimeout(() => projectsDiv.classList.remove("hide"), 1000);
+	setTimeout(() => (projectsDiv.style.transform = "perspective(300px) rotateY(-10deg)"), 1250);
 }
 
-function loadprojects() {
-	let projectsDiv = document.getElementById("projects_list_div");
+function loadProjects() {
+	let projectsDiv = document.getElementById("list_div");
 
 	projects.forEach((project) => {
 		// Main div for each project
-		let expDiv = document.createElement("div");
-		expDiv.className = "exp_div";
-		projectsDiv.appendChild(expDiv);
+		let projectDiv = document.createElement("div");
+		projectDiv.className = "slider_box";
+		projectsDiv.appendChild(projectDiv);
 
-		// Top div for image, company name and position
-		let topDiv = document.createElement("div");
-		topDiv.className = "top_exp_div";
-		expDiv.appendChild(topDiv);
-
-		// Top left div for image
-		let topLeftDiv = document.createElement("div");
-		topLeftDiv.className = "top_left_exp_div";
-		topDiv.appendChild(topLeftDiv);
-
-		// Company logo image
-		let image = document.createElement("img");
-		image.src = project.img;
-		image.className = "company_logo";
-		topLeftDiv.appendChild(image);
-
-		// Top right div for company name and position
-		let topRightDiv = document.createElement("div");
-		topRightDiv.className = "top_right_exp_div";
-		topDiv.appendChild(topRightDiv);
-
-		// Company name
-		let compName = document.createElement("h2");
-		compName.className = "comp_name_exp";
-		compName.innerHTML = project.company;
-		topRightDiv.appendChild(compName);
-
-		// Position
-		let positionName = document.createElement("h2");
-		positionName.className = "position_exp";
-		positionName.innerHTML = project.position;
-		topRightDiv.appendChild(positionName);
-
-		// Div for date range
-		let dateDiv = document.createElement("div");
-		dateDiv.className = "date_exp_div";
-		expDiv.appendChild(dateDiv);
-
-		// Date range
-		let date = document.createElement("h3");
-		date.className = "date_exp";
-		date.innerHTML = project.start_date + " - " + project.end_date;
-		dateDiv.appendChild(date);
-
-		// Bottom div for short description paragraph
-		let bottomDiv = document.createElement("div");
-		bottomDiv.className = "bottom_exp_div";
-		expDiv.appendChild(bottomDiv);
-
-		// Short description paragraph
-		let shortParagraph = document.createElement("p");
-		shortParagraph.className = "short_exp_paragraph";
-		shortParagraph.innerHTML = project.short_desc;
-		bottomDiv.appendChild(shortParagraph);
+		
 	});
 }
 
-function interactiveprojectsScrollBar() {
-	let up = document.getElementById("project_up");
-	let down = document.getElementById("project_down");
-	let list = document.getElementById("projects_list_div");
-	let wrapper = document.getElementById("projects_list_wrapper");
+function interactiveProjectsScrollBar() {
+	let up = document.getElementById("up");
+	let down = document.getElementById("down");
+	let list = document.getElementById("list_div");
+	let wrapper = document.getElementById("list_wrapper");
 
 	const step = 150 + 25; // 150px height + 50px margin
 	const startPos = wrapper.offsetHeight / 2 - step / 2 - 12.5;
@@ -212,7 +266,7 @@ function interactiveprojectsScrollBar() {
 
 		setTimeout(() => {
 			document.getElementById("secondary_header").innerHTML = projects[index].company.split(" ")[0] + " • " + projects[index].position;
-			document.getElementById("project_paragraph").innerHTML = projects[index].long_desc;
+			document.getElementById("main_paragraph").innerHTML = projects[index].long_desc;
 
 			infoDiv.style.transition = "none";
 			infoDiv.style.transform = "translateY(" + (direction === "down" ? "+" : "-") + "15%)";
@@ -222,21 +276,4 @@ function interactiveprojectsScrollBar() {
 			infoDiv.style.opacity = "1";
 		}, 500);
 	}
-}
-
-function hoverAnimationOnprojects() {
-	document.querySelectorAll(".exp_div").forEach((b) => {
-		b.onmouseleave = (e) => {
-			e.target.style.background = "black";
-			e.target.style.borderImage = null;
-		};
-
-		b.addEventListener("mousemove", (e) => {
-			const rect = b.getBoundingClientRect();
-			const x = e.clientX - rect.left; //x position within the element.
-			const y = e.clientY - rect.top; //y position within the element.
-			b.style.background = `radial-gradient(circle at ${x}px ${y}px , rgba(255,255,255,0.2),rgba(255,255,255,0) )`;
-			b.style.borderImage = `radial-gradient(20% 75% at ${x}px ${y}px ,rgba(255,255,255,0.7),rgba(255,255,255,0.1) ) 1 / 1px / 0px stretch `;
-		});
-	});
 }

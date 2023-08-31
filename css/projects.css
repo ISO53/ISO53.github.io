@@ -1,0 +1,41 @@
+.slider_box {
+	width: auto;
+	height: 150px;
+	overflow: hidden;
+	border: 1px solid rgba(200, 200, 200, 0.2);
+	margin: 25px;
+
+	transition: transform 500ms ease, opacity 500ms ease;
+}
+
+.button_div {
+	width: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-left: 20px;
+
+	transition: opacity 500ms ease;
+}
+
+.list_wrapper {
+	width: 40%;
+	margin-right: 20px;
+	overflow: hidden;
+	user-select: none;
+
+	transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.list_div {
+	transition: transform 500ms ease;
+}
+
+.button:first-child {
+	margin-bottom: 10px;
+}
+
+.button:last-child {
+	margin-top: 10px;
+}

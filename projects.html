@@ -5,7 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Yusuf İhsan Şimşek • Projects</title>
-	<link rel="stylesheet" href="css/index.css">
+
+	<link rel="stylesheet" href="css/body.css">
+	<link rel="stylesheet" href="css/default_page.css">
+	<link rel="stylesheet" href="css/menu_button.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/up_down_button.css">
+	<link rel="stylesheet" href="css/projects.css">
+
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,31 +43,31 @@
 				<ul class="menu_items" id="menu_items">
 					<a href="about_me.html" class="menu_item hide_item" id="about_me_button">About Me</a>
 					<a href="skills.html" class="menu_item hide_item" id="skills_button">Skills</a>
-					<a href="project.html" class="menu_item hide_item" id="project_button">project</a>
+					<a href="experience.html" class="menu_item hide_item" id="experience_button">Experience</a>
 					<a href="projects.html" class="menu_item hide_item" id="projects_button">Projects</a>
 					<a href="contact.html" class="menu_item hide_item" id="contact_button">Contact</a>
 				</ul>
 			</div>
 
-			<div class="project_div" id="project_div">
+			<div class="main_div">
 
-				<h1 class="header hide_project_header" id="project_header">project</h1>
+				<h1 class="header hide_only_opacity" id="header">PROJECTS</h1>
 
 				<div class="information" id="information_div">
-					<h2 class="secondary_header hide_secondary_header" id="secondary_header">My projects!</h2>
+					<h2 class="secondary_header hide" id="secondary_header">My Projects!</h2>
 
-					<p class="project_paragraph hide_project_paragraph" id="project_paragraph">
-						These projects have evolved over the years, playing a pivotal role in the development of my expertise and a deeper understanding of the multifaceted landscape of computer engineering. They have contributed significantly to my ability to navigate complex challenges and make informed decisions in this dynamic field.
+					<p class="main_paragraph hide" id="main_paragraph">
+						Hello! Take a moment to explore my GitHub projects. From Java development and backend solutions to multithreading in C, Linux programming, and full-stack projects, my GitHub showcases a diverse range of coding expertise. Explore and discover projects that align with your interests, feel free to browse and discover what interests you. If you have any questions or suggestions, don't hesitate to reach out. Happy exploring!
 					</p>
 				</div>
 
-				<div class="project_button_div hide_project_button_div" id="project_button_div">
-					<button class="project_button" id="project_up"><span class="up">⌃</span></button>
-					<button class="project_button" id="project_down"><span class="down">⌄</span></button>
+				<div class="button_div hide" id="button_div">
+					<button class="button" id="up"><span class="up">⌃</span></button>
+					<button class="button" id="down"><span class="down">⌄</span></button>
 				</div>
 
-				<div class="projects_list_wrapper hide_projects_list_wrapper" id="projects_list_wrapper">
-					<div class="projects_list_div" id="projects_list_div"></div>
+				<div class="list_wrapper hide" id="list_wrapper">
+					<div class="list_div" id="list_div"></div>
 				</div>
 
 			</div>
@@ -70,6 +77,7 @@
 	</div>
 
 	<script src="js/projects.js"></script>
+	<script src="js/windows_mouse_hover_effect.js"></script>
 	<script src="js/menu.js"></script>
 </body>
 

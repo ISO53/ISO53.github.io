@@ -62,7 +62,7 @@ function firstLoadAnimations() {
 	let header = document.getElementById("experience_header");
 	let secondaryHeader = document.getElementById("secondary_header");
 	let paragraph = document.getElementById("experience_paragraph");
-	let buttons = document.getElementById("experience_button_div");
+	let buttons = document.getElementById("button_div");
 	let experiencesDiv = document.getElementById("list_wrapper");
 
 	setTimeout(() => header.classList.remove("hide_only_opacity"), 250);
@@ -140,8 +140,8 @@ function loadExperiences() {
 }
 
 function interactiveExperiencesScrollBar() {
-	let up = document.getElementById("experience_up");
-	let down = document.getElementById("experience_down");
+	let up = document.getElementById("up");
+	let down = document.getElementById("down");
 	let list = document.getElementById("list_div");
 	let wrapper = document.getElementById("list_wrapper");
 
