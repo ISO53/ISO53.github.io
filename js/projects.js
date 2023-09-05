@@ -1,57 +1,4 @@
 // ******************** Declare Variables ********************
-const projects = [
-	{
-		company: "Deka Technology",
-		position: "Backend Developer",
-		img: "res/deka_technology_logo.png",
-		short_desc: "Still working as a backend developer intern.",
-		long_desc: "Still working as a backend developer intern.",
-		start_date: "August 2023",
-		end_date: "September 2023",
-	},
-	{
-		company: "Perdestanbul - perdestanbul.com",
-		position: "Fullstack Developer",
-		img: "res/perdestanbul_logo.png",
-		short_desc: "I led the development for a curtain-selling website using WooCommerce. My focus on secure payment integration, SEO, and cache management enhanced performance and growth.",
-		long_desc:
-			"As a backend-focused Full Stack Developer, I utilized WooCommerce to lead the development of a dynamic curtain selling website. My expertise in secure payment integration, SEO optimization, and efficient cache management played a crucial role in enhancing the website's performance. By seamlessly integrating secure payment gateways using WooCommerce, implementing strategic SEO practices, and optimizing cache management, I achieved improved visibility, organic search traffic, and exceptional website speed. Additionally, my backend responsibilities included efficient inventory management and database optimization, ensuring a streamlined product catalog. Leveraging the power of WooCommerce, my full stack development expertise has resulted in positive customer feedback and substantial business growth.\n\n Finally, I decided to move away from web development because it was a mess. I noticed numerous websites and plugins that were either painfully slow, riddled with bugs, or sometimes both. Till now, money was a motivator, but I knew it was time for a shift. So, I decided to put all my focus on backend development.",
-		start_date: "May 2023",
-		end_date: "July 2023",
-	},
-	{
-		company: "İncePerde - inceperde.com.tr",
-		position: "Freelance Web Developer",
-		img: "res/inceperde_logo.webp",
-		short_desc: "I designed a dynamic curtain sales website using JavaScript, CSS, and HTML. It featured interactivity, SEO optimization, and reliable hosting.",
-		long_desc:
-			"As a freelance web developer, I created a dynamic and responsive website for a curtain sales company using JavaScript, CSS, and HTML. The website included various interactive features to enhance user project. I also optimized the website for search engines using SEO techniques to increase online visibility and attract more potential customers. Hosting the website on reliable and fast servers ensured maximum uptime and fast loading speeds.",
-		start_date: "March 2023",
-		end_date: "April 2023",
-	},
-	{
-		company: "PIA (People in Action)",
-		position: "Backend Developer",
-		img: "res/pia_logo.webp",
-		short_desc: "This internship enhanced my technical skills, especially in areas like backend and web development and database management, which will be valuable in my future work.",
-		long_desc:
-			"Throughout the duration of my internship, I had the opportunity to immerse myself in a diverse array of technologies, ranging from Microservices, Java SpringBoot, Hibernate, and various databases such as PostgreSQL and MongoDB, to integrating with external APIs like the OpenWeatherMap API. Additionally, I honed my web development skills, delving into HTML, CSS, and JavaScript. This invaluable project has firmly established a robust foundation in these technologies, igniting my enthusiasm to further explore and leverage them in my forthcoming professional undertakings.",
-		start_date: "June 2022",
-		end_date: "July 2022",
-	},
-	{
-		company: "Tasarımla - tasarımla.com",
-		position: "Freelance Web Developer",
-		img: "res/tasarimla_logo.png",
-		short_desc: "I created a product catalog website using HTML, CSS, and JS, hosted it on Natro's reliable platform, and gained Linux-based cPanel expertise.",
-		long_desc:
-			"As part of my journey in web development, I took on the task of creating a dynamic product catalog website. Using a blend of HTML, CSS, and JavaScript, I designed and developed this platform to showcase a range of promotional products. For hosting, I selected dependable and efficient service provider that ensured the website's reliable accessibility. Additionally, I explored Linux-based cPanel administration during this project, which enhanced my skill set. This project has strengthened my web development skills and expanded my understanding of web hosting, preparing me for future projects in this field.",
-		start_date: "March 2022",
-		end_date: "April 2022",
-	},
-];
-const LIST_SIZE = projects.length;
-
 const exampleProject = {
 	id: 652569528,
 	node_id: "R_kgDOJuVruA",
@@ -159,6 +106,10 @@ const exampleProject = {
 	watchers: 1,
 	default_branch: "master",
 };
+let PROJECTS;
+let LANGUAGES = {};
+let TAGS = {};
+let LIST_SIZE;
 
 // ************************ JS Starts ************************
 loadProjects();
@@ -182,16 +133,106 @@ function firstLoadAnimations() {
 }
 
 function loadProjects() {
-	let projectsDiv = document.getElementById("list_div");
+	const apiUrl = "https://api.github.com/users/iso53/repos";
 
-	projects.forEach((project) => {
-		// Main div for each project
-		let projectDiv = document.createElement("div");
-		projectDiv.className = "slider_box";
-		projectsDiv.appendChild(projectDiv);
+	fetch(apiUrl)
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error(`GitHub API request failed with status: ${response.status}`);
+			}
+			return response.json();
+		})
+		.then((data) => (PROJECTS = data) && loadEachProject(data))
+		.catch((error) => console.error("Error:", error));
 
-		
-	});
+	function loadEachProject(projects) {
+		let projectsDiv = document.getElementById("list_div");
+		LIST_SIZE = projects.length;
+
+		projects.forEach((project) => {
+			// Load language
+			fetch(project.languages_url)
+				.then((response) => response.json())
+				.then((data) => (LANGUAGES[project.id] = data))
+				.catch((error) => console.error("Error:", error));
+
+			// Load tags
+			fetch(project.tags_url)
+				.then((response) => response.json())
+				.then((data) => (TAGS[project.id] = data))
+				.catch((error) => console.error("Error:", error));
+
+			// Main div for each project
+			let projectDiv = document.createElement("div");
+			projectDiv.className = "slider_box";
+			projectsDiv.appendChild(projectDiv);
+
+			// Top div for repo name and state
+			let topDiv = document.createElement("div");
+			topDiv.className = "project_top_div";
+			projectDiv.appendChild(topDiv);
+
+			// H2 element for repo name
+			let repoName = document.createElement("h2");
+			repoName.innerHTML = project.name.replace(/-/g, " ");
+			repoName.className = "project_name";
+			topDiv.appendChild(repoName);
+
+			// Public / private tag
+			let tag = document.createElement("span");
+			tag.innerHTML = project.private === true ? "Private" : "Public";
+			tag.className = "tag";
+			topDiv.appendChild(tag);
+
+			// Middle div for repo description
+			let middleDiv = document.createElement("div");
+			middleDiv.className = "project_middle_div";
+			projectDiv.appendChild(middleDiv);
+
+			// Readme
+			let description = document.createElement("p");
+			description.innerHTML = project.description;
+			description.className = "project_desc";
+			middleDiv.appendChild(description);
+
+			// Bottom div for project details
+			let bottomDiv = document.createElement("div");
+			bottomDiv.className = "project_bottom_div";
+			projectDiv.appendChild(bottomDiv);
+
+			// Language
+			let lang = document.createElement("h3");
+			lang.className = "project_lang";
+			lang.innerHTML = project.language;
+			bottomDiv.appendChild(lang);
+
+			// Stargazers image
+			let stars = document.createElement("img");
+			stars.className = "project_stars";
+			stars.src = "res/star.svg";
+			bottomDiv.appendChild(stars);
+
+			// Stargazers count
+			let starsCount = document.createElement("h3");
+			starsCount.className = "project_stars_count";
+			starsCount.innerHTML = project.stargazers_count;
+			bottomDiv.appendChild(starsCount);
+
+			if (project.license !== null) {
+				// License image
+				let license = document.createElement("img");
+				license.className = "project_license";
+				license.src = "res/license.svg";
+				bottomDiv.appendChild(license);
+
+				// License name
+				let licenseName = document.createElement("h3");
+				licenseName.className = "project_license_name";
+				licenseName.innerHTML = project.license.name;
+				bottomDiv.appendChild(licenseName);
+			}
+		});
+	}
 }
 
 function interactiveProjectsScrollBar() {
@@ -238,36 +279,137 @@ function interactiveProjectsScrollBar() {
 		}
 
 		if (index + 1 < LIST_SIZE) {
-			list.children[index + 1].style.transform = "scale(" + 90 + "%)";
+			list.children[index + 1].style.transform = "scale(90%)";
 			list.children[index + 1].style.opacity = "60%";
 		}
 
 		if (index - 1 >= 0) {
-			list.children[index - 1].style.transform = "scale(" + 90 + "%)";
+			list.children[index - 1].style.transform = "scale(90%)";
 			list.children[index - 1].style.opacity = "60%";
 		}
 
 		if (index + 2 < LIST_SIZE) {
-			list.children[index + 2].style.transform = "scale(" + 80 + "%)";
+			list.children[index + 2].style.transform = "scale(80%)";
 			list.children[index + 2].style.opacity = "20%";
 		}
 
 		if (index - 2 >= 0) {
-			list.children[index - 2].style.transform = "scale(" + 80 + "%)";
+			list.children[index - 2].style.transform = "scale(80%)";
 			list.children[index - 2].style.opacity = "20%";
 		}
 	}
 
 	function loadNewproject(direction) {
 		let infoDiv = document.getElementById("information_div");
+		let secondaryHeader = document.getElementById("secondary_header");
+		let mainParagraph = document.getElementById("main_paragraph");
+		let languagesDiv = document.getElementById("project_languages_div");
+		let otherDetailsDiv = document.getElementById("project_other_details_div");
+		let tagsDiv = document.getElementById("projects_tags_div");
 
 		infoDiv.style.transform = "translateY(" + (direction === "up" ? "+" : "-") + "15%)";
 		infoDiv.style.opacity = "0";
 
 		setTimeout(() => {
-			document.getElementById("secondary_header").innerHTML = projects[index].company.split(" ")[0] + " • " + projects[index].position;
-			document.getElementById("main_paragraph").innerHTML = projects[index].long_desc;
+			// Header
+			secondaryHeader.innerHTML = PROJECTS[index].full_name.replace(/-/g, " ") + "<h4 id='arrow'>➚</h4>";
+			secondaryHeader.setAttribute("href", PROJECTS[index].html_url);
+			mainParagraph.innerHTML = PROJECTS[index].description;
 
+			// Languages
+			languagesDiv.innerHTML = "";
+			let total = 0;
+			Object.keys(LANGUAGES[PROJECTS[index].id]).forEach((key) => (total += LANGUAGES[PROJECTS[index].id][key]));
+
+			Object.keys(LANGUAGES[PROJECTS[index].id]).forEach((key) => {
+				let value = LANGUAGES[PROJECTS[index].id][key];
+				console.log(total, value, (100 * value) / total);
+
+				let langDiv = document.createElement("div");
+				langDiv.className = "lang_div";
+				languagesDiv.appendChild(langDiv);
+
+				let langInnerDiv = document.createElement("div");
+				langInnerDiv.className = "lang_inner_div";
+				langDiv.appendChild(langInnerDiv);
+
+				let langLevel = document.createElement("div");
+				langLevel.className = "lang_level";
+				langLevel.style.width = (100 * value) / total + "px";
+				langInnerDiv.appendChild(langLevel);
+
+				let lang = document.createElement("h4");
+				lang.className = "language";
+				lang.innerHTML = key;
+				langDiv.appendChild(lang);
+			});
+
+			// Other details
+			otherDetailsDiv.innerHTML = "";
+
+			// Last Updated
+			let lastUpdatedDiv = document.createElement("div");
+			lastUpdatedDiv.className = "detail_div";
+			otherDetailsDiv.appendChild(lastUpdatedDiv);
+
+			let lastUpdateLogo = document.createElement("img");
+			lastUpdateLogo.src = "res/date.svg";
+			lastUpdateLogo.className = "details_logo";
+			lastUpdatedDiv.appendChild(lastUpdateLogo);
+
+			let lastUpdateDate = document.createElement("h4");
+			lastUpdateDate.className = "details_text";
+			lastUpdateDate.innerHTML = formatDate(PROJECTS[index].updated_at);
+			lastUpdatedDiv.appendChild(lastUpdateDate);
+
+			// License
+			let licenseDiv = document.createElement("div");
+			licenseDiv.className = "detail_div";
+			otherDetailsDiv.appendChild(licenseDiv);
+
+			let licenseLogo = document.createElement("img");
+			licenseLogo.src = "res/license.svg";
+			licenseLogo.className = "details_logo";
+			licenseDiv.appendChild(licenseLogo);
+
+			let licenseName = document.createElement("h4");
+			licenseName.className = "details_text";
+			licenseName.innerHTML = PROJECTS[index].license === null ? "No License" : PROJECTS[index].license.name;
+			licenseDiv.appendChild(licenseName);
+
+			// Stars
+			let starsDiv = document.createElement("div");
+			starsDiv.className = "detail_div";
+			otherDetailsDiv.appendChild(starsDiv);
+
+			let starsLogo = document.createElement("img");
+			starsLogo.src = "res/star.svg";
+			starsLogo.className = "details_logo";
+			starsDiv.appendChild(starsLogo);
+
+			let starCount = document.createElement("h4");
+			starCount.className = "details_text";
+			starCount.innerHTML = PROJECTS[index].stargazers_count;
+			starsDiv.appendChild(starCount);
+
+			// Watchers
+			let watchersDiv = document.createElement("div");
+			watchersDiv.className = "detail_div";
+			otherDetailsDiv.appendChild(watchersDiv);
+
+			let watchersLogo = document.createElement("img");
+			watchersLogo.src = "res/eye.svg";
+			watchersLogo.className = "details_logo";
+			watchersDiv.appendChild(watchersLogo);
+
+			let watchersCount = document.createElement("h4");
+			watchersCount.className = "details_text";
+			watchersCount.innerHTML = PROJECTS[index].watchers_count;
+			watchersDiv.appendChild(watchersCount);
+
+			// Tags
+
+			// ---
 			infoDiv.style.transition = "none";
 			infoDiv.style.transform = "translateY(" + (direction === "down" ? "+" : "-") + "15%)";
 
@@ -276,4 +418,16 @@ function interactiveProjectsScrollBar() {
 			infoDiv.style.opacity = "1";
 		}, 500);
 	}
+}
+
+function formatDate(date) {
+	const dateObj = new Date(date);
+
+	// Extract day, month, and year components
+	const day = dateObj.getDate();
+	const month = dateObj.toLocaleString("default", { month: "long" });
+	const year = dateObj.getFullYear();
+
+	// Create the formatted string
+	return `${day} ${month} ${year}`;
 }
