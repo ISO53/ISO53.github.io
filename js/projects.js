@@ -108,7 +108,6 @@ const exampleProject = {
 };
 let PROJECTS;
 let LANGUAGES = {};
-let TAGS = {};
 let LIST_SIZE;
 
 // ************************ JS Starts ************************
@@ -154,12 +153,6 @@ function loadProjects() {
 			fetch(project.languages_url)
 				.then((response) => response.json())
 				.then((data) => (LANGUAGES[project.id] = data))
-				.catch((error) => console.error("Error:", error));
-
-			// Load tags
-			fetch(project.tags_url)
-				.then((response) => response.json())
-				.then((data) => (TAGS[project.id] = data))
 				.catch((error) => console.error("Error:", error));
 
 			// Main div for each project
@@ -323,7 +316,6 @@ function interactiveProjectsScrollBar() {
 
 			Object.keys(LANGUAGES[PROJECTS[index].id]).forEach((key) => {
 				let value = LANGUAGES[PROJECTS[index].id][key];
-				console.log(total, value, (100 * value) / total);
 
 				let langDiv = document.createElement("div");
 				langDiv.className = "lang_div";
@@ -407,7 +399,18 @@ function interactiveProjectsScrollBar() {
 			watchersCount.innerHTML = PROJECTS[index].watchers_count;
 			watchersDiv.appendChild(watchersCount);
 
-			// Tags
+			// Topics
+			tagsDiv.innerHTML = "";
+			PROJECTS[index].topics.forEach((topic) => {
+				let tagDiv = document.createElement("div");
+				tagDiv.className = "tiny_box";
+				tagsDiv.appendChild(tagDiv);
+
+				let tagName = document.createElement("h3");
+				tagName.innerHTML = topic;
+				tagName.className = "tiny_box_name";
+				tagDiv.appendChild(tagName);
+			});
 
 			// ---
 			infoDiv.style.transition = "none";

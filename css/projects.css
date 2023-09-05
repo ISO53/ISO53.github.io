@@ -199,11 +199,18 @@
 	justify-content: left;
 	align-items: center;
 	width: 100%;
+	user-select: none;
+	transition: filter 250ms ease;
+}
+
+.detail_div:hover {
+	filter: brightness(500%);
 }
 
 .details_logo {
 	height: 100%;
 	width: min-content;
+	transition: filter 250ms ease;
 }
 
 .details_text {
@@ -211,4 +218,16 @@
 	font-weight: 400;
 	color: grey;
 	font-size: 14px;
+	transition: color 250ms ease;
+}
+
+.projects_tags_div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: 20px;
+}
+
+.tiny_box {
+	margin: 5px 5px 5px 0px;
 }
