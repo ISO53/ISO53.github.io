@@ -10,7 +10,7 @@ function hoverAnimation() {
 			e.target.style.background = "black";
 			e.target.style.borderImage = null;
 		};
-
+				
 		b.addEventListener("mousemove", (e) => {
 			const rect = b.getBoundingClientRect();
 			const x = e.clientX - rect.left; //x position within the element.

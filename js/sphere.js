@@ -154,23 +154,12 @@ function sphereAnimation() {
 		requestAnimFrame(update);
 	}
 
-	function start() {
-		document.getElementById("sphere").onmousemove = function (e) {
-			mouse.px = mouse.x;
-			mouse.py = mouse.y;
-			var rect = canvas.getBoundingClientRect();
-			(mouse.x = e.clientX - rect.left), (mouse.y = e.clientY - rect.top);
-		};
-
-		update();
-	}
-
 	window.onload = function () {
 		canvas = document.getElementById("c");
 		ctx = canvas.getContext("2d");
 		canvas.width = 500;
 		canvas.height = 500;
 
-		start();
+		update();
 	};
 }

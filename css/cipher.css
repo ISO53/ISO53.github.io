@@ -30,7 +30,7 @@
 }
 
 .wheel:hover {
-	filter: brightness(0) saturate(100%) invert(88%) sepia(15%) saturate(6093%) hue-rotate(315deg) brightness(104%) contrast(102%);
+	filter: brightness(0) saturate(100%) invert(15%) sepia(83%) saturate(3466%) hue-rotate(343deg) brightness(102%) contrast(90%);
 }
 
 .wheel_svg {
@@ -81,7 +81,7 @@
 .cipher_selector {
 	width: 30px;
 	height: 250px;
-	backdrop-filter: brightness(500%);
+	backdrop-filter: brightness(1000%);
 	position: absolute;
 	top: 0;
 	left: calc(50% - 15px);

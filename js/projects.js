@@ -224,6 +224,20 @@ function loadProjects() {
 				licenseName.innerHTML = project.license.name;
 				bottomDiv.appendChild(licenseName);
 			}
+
+			// Hover animation
+			projectDiv.onmouseleave = (e) => {
+				e.target.style.background = "black";
+				e.target.style.borderImage = null;
+			};
+
+			projectDiv.addEventListener("mousemove", (e) => {
+				const rect = projectDiv.getBoundingClientRect();
+				const x = e.clientX - rect.left; //x position within the element.
+				const y = e.clientY - rect.top; //y position within the element.
+				projectDiv.style.background = `radial-gradient(circle at ${x}px ${y}px , rgba(255,255,255,0.2),rgba(255,255,255,0) )`;
+				projectDiv.style.borderImage = `radial-gradient(20% 75% at ${x}px ${y}px ,rgba(255,255,255,0.7),rgba(255,255,255,0.1) ) 1 / 1px / 0px stretch `;
+			});
 		});
 	}
 }

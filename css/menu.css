@@ -6,6 +6,10 @@
 	background-color: black;
 	z-index: 1;
 	opacity: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
 	transition: opacity 500ms ease, z-index 500ms ease, display 500ms ease;
 }
 
@@ -19,8 +23,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	width: 100%;
-	height: 100%;
+	padding-right: 20px;
 }
 
 .menu_item {
@@ -34,7 +37,7 @@
 }
 
 .menu_item:hover {
-	color: #ffa664;
+	color: #ce2233;
 	transform: scaleX(110%);
 	font-weight: 900;
 }
@@ -42,4 +45,61 @@
 .hide_item {
 	color: transparent;
 	transform: translateX(-120%);
+}
+
+/* Social Links */
+.resources {
+	position: absolute;
+	width: 100%;
+	height: 25px;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.resource:hover .resource_desc{
+	opacity: 1;
+	transform: translateY(-40px) scale(100%);
+}
+
+.resource:hover .resource_image{
+	filter: brightness(0) saturate(100%) invert(15%) sepia(83%) saturate(3466%) hue-rotate(343deg) brightness(102%) contrast(90%);
+}
+
+.resource {
+	position: block;
+	height: 50px;
+	width: 100px;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	user-select: none;
+}
+
+.resource_image {
+	height: 25px;
+	width: 25px;
+	object-fit: contain;
+}
+
+.resource_desc {
+	position: absolute;
+	font-size: 12px;
+	text-align: center;
+	font-weight: 500;
+	white-space: nowrap;
+	color: black;
+	opacity: 0;
+	padding: 5px 10px 5px 10px;
+	border-radius: 16px;
+	background-color: rgba(255, 255, 255, 0.8);
+	transform: translateY(-20px) scale(20%);
+
+	transition: opacity 250ms ease, transform 250ms ease;
 }
