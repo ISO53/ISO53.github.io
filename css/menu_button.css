@@ -78,7 +78,7 @@ path:nth-child(6) {
 @media (max-width: 768px) {
 	.container {
 		transform: scale(60%);
-		top: -22px;
+		top: -36px;
 		right: -10px;
 	}
 }
