@@ -178,8 +178,9 @@ function interactiveExperiencesScrollBar() {
 
 	function adjustOtherDivs() {
 		for (let i = 0; i < list.children.length; i++) {
-			list.children[i].classList.remove("second_level_hide");
 			list.children[i].classList.remove("first_level_hide");
+			list.children[i].classList.remove("second_level_hide");
+			list.children[i].classList.remove("third_level_hide");
 		}
 
 		if (index + 1 < LIST_SIZE) {
@@ -196,6 +197,14 @@ function interactiveExperiencesScrollBar() {
 
 		if (index - 2 >= 0) {
 			list.children[index - 2].classList.add("second_level_hide");
+		}
+
+		if (index + 3 < LIST_SIZE) {
+			list.children[index + 3].classList.add("third_level_hide");
+		}
+
+		if (index - 3 >= 0) {
+			list.children[index - 3].classList.add("third_level_hide");
 		}
 	}
 
