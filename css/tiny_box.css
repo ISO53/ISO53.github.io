@@ -28,3 +28,15 @@
 	color: rgba(255, 255, 255, 0.6);
 	transition: color 250ms ease;
 }
+
+@media (max-width: 768px) {
+	.tiny_box { 
+		height: 20px;
+		padding: 3px 8px 3px 8px;
+		margin: 5px;
+	}
+
+	.tiny_box_name {
+		font-size: 12px;
+	}
+}

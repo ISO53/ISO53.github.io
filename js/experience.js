@@ -70,7 +70,7 @@ function firstLoadAnimations() {
 	setTimeout(() => paragraph.classList.remove("hide"), 750);
 	setTimeout(() => buttons.classList.remove("hide"), 1000);
 	setTimeout(() => experiencesDiv.classList.remove("hide"), 1000);
-	setTimeout(() => experiencesDiv.style.transform = "perspective(300px) rotateY(-10deg)", 1250);
+	setTimeout(() => experiencesDiv.classList.add("perspective"), 1250);
 }
 
 function loadExperiences() {
@@ -178,28 +178,24 @@ function interactiveExperiencesScrollBar() {
 
 	function adjustOtherDivs() {
 		for (let i = 0; i < list.children.length; i++) {
-			list.children[i].style.transform = "none";
-			list.children[i].style.opacity = "1";
+			list.children[i].classList.remove("second_level_hide");
+			list.children[i].classList.remove("first_level_hide");
 		}
 
 		if (index + 1 < LIST_SIZE) {
-			list.children[index + 1].style.transform = "scale(" + 90 + "%)";
-			list.children[index + 1].style.opacity = "60%";
+			list.children[index + 1].classList.add("first_level_hide");
 		}
 
 		if (index - 1 >= 0) {
-			list.children[index - 1].style.transform = "scale(" + 90 + "%)";
-			list.children[index - 1].style.opacity = "60%";
+			list.children[index - 1].classList.add("first_level_hide");
 		}
 
 		if (index + 2 < LIST_SIZE) {
-			list.children[index + 2].style.transform = "scale(" + 80 + "%)";
-			list.children[index + 2].style.opacity = "20%";
+			list.children[index + 2].classList.add("second_level_hide");
 		}
 
 		if (index - 2 >= 0) {
-			list.children[index - 2].style.transform = "scale(" + 80 + "%)";
-			list.children[index - 2].style.opacity = "20%";
+			list.children[index - 2].classList.add("second_level_hide");
 		}
 	}
 

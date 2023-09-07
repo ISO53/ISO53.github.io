@@ -22,6 +22,10 @@
 	transition: opacity 500ms ease, transform 500ms ease;
 }
 
+.perspective {
+	transform: perspective(300px) rotateY(-10deg);
+}
+
 .hide_experiences_list_wrapper {
 	opacity: 0;
 }
@@ -135,4 +139,75 @@
 	margin-left: 20px;
 
 	transition: opacity 500ms ease;
+}
+
+.first_level_hide {
+	transform: scale(0.9);
+    opacity: 0.6;
+}
+
+
+.second_level_hide {
+	transform: scale(0.8);
+    opacity: 0.2;
+}
+
+#additional_details {
+	margin: 0px 0px 20px 0px;
+	font-size: 12px;
+	font-weight: 300;
+	color: grey;
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.button_div {
+		display: none;
+	}
+
+	.list_div {
+		transform: none !important;
+	}
+
+	.main_paragraph {
+		height: 300px;
+		overflow: auto;
+		display: none;
+	}
+
+	.secondary_header  {
+		display: none;
+	}
+
+	.list_wrapper {
+		width: 100%;
+		transform: none;
+		margin: 0;
+	}
+
+	.slider_box {
+		transform: none;
+		opacity: 1;
+		height: min-content;
+	}
+
+	.top_exp_div {
+		height: 50px;
+	}
+	
+	.bottom_exp_div {
+		margin-bottom: 10px;
+		height: min-content;
+	}
+
+	.short_exp_paragraph {
+		display: block;
+		-webkit-line-clamp: unset;
+		-webkit-box-orient: unset;
+		text-overflow: initial;
+	}
+
+	#additional_details {
+		display: block;
+	}
 }
