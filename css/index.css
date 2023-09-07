@@ -9,3 +9,9 @@
 	color: grey;
 }
 
+@media (max-width: 768px) {
+	.welcome p {
+		font-size: 1rem;
+		margin: 10px;
+	}
+}

@@ -9,3 +9,9 @@
 	z-index: 20;
 	transition: opacity 1s ease;
 }
+
+@media (max-width: 768px) {
+    #mouse_circle {
+        display: none;
+    }
+}

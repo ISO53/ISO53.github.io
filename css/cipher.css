@@ -92,3 +92,15 @@
 .password {
 	color: white;
 }
+
+@media (max-width: 768px) {
+	.cipher_div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.cipher {
+		transform: scale(60%);
+	}
+}
