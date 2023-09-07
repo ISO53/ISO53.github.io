@@ -84,10 +84,18 @@
 		width: 100%;
 		transform: none;
 		-webkit-box-reflect: unset;
-		margin-top: 50px;
+		margin: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: min-content;
+		padding: 10px 0px 10px 0px;
+		border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+		backdrop-filter: blur(10px);
 	}
 
 	.main_div {
+		margin-top: 75px;
 		flex-direction: column;
 		height: auto;
 		justify-content: center;
