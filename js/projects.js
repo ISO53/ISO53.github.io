@@ -202,6 +202,7 @@ function loadProjects() {
 			// Stargazers image
 			let stars = document.createElement("img");
 			stars.className = "project_stars";
+			stars.alt = "star logo";
 			stars.src = "res/star.svg";
 			bottomDiv.appendChild(stars);
 
@@ -215,6 +216,7 @@ function loadProjects() {
 				// License image
 				let license = document.createElement("img");
 				license.className = "project_license";
+				license.alt = "license logo";
 				license.src = "res/license.svg";
 				bottomDiv.appendChild(license);
 
