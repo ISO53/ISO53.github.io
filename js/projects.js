@@ -223,7 +223,7 @@ function loadProjects() {
 				// License name
 				let licenseName = document.createElement("h3");
 				licenseName.className = "project_license_name";
-				licenseName.innerHTML = project.license.name;
+				licenseName.innerHTML = project.license.spdx_id;
 				bottomDiv.appendChild(licenseName);
 			}
 
@@ -257,7 +257,7 @@ function interactiveProjectsScrollBar() {
 	let index = 0;
 
 	list.style.transform = "translateY(" + current + "px)";
-	adjustOtherDivs();
+	setTimeout(() => adjustOtherDivs(), 1500);
 
 	up.addEventListener("click", () => {
 		if (index - 1 >= 0) {
