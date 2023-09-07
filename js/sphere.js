@@ -1,4 +1,5 @@
 // ******************** Declare Variables ********************
+const canvasDiv = document.getElementById("sphere");
 
 // ************************ JS Starts ************************
 sphereAnimation();
@@ -8,7 +9,7 @@ function sphereAnimation() {
 	var canvas,
 		ctx,
 		sphere = new Sphere3D(40),
-		distance = 450,
+		distance = canvasDiv.offsetWidth - 50,
 		mouse = {
 			down: false,
 			button: 1,
@@ -157,8 +158,8 @@ function sphereAnimation() {
 	window.onload = function () {
 		canvas = document.getElementById("c");
 		ctx = canvas.getContext("2d");
-		canvas.width = 500;
-		canvas.height = 500;
+		canvas.width = canvasDiv.offsetWidth;
+		canvas.height = canvas.width;
 
 		update();
 	};

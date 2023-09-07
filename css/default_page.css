@@ -12,7 +12,6 @@
 
 .header {
 	writing-mode: vertical-lr;
-	font-size: 100px;
 	transform: rotate(180deg);
 	text-align: center;
 	white-space: nowrap;
@@ -73,6 +72,31 @@
 		margin: 0;
 		left: 0;
 		right: 0;
-		overflow: hidden;
+		top: 0;
+		bottom: 0;
+		overflow: auto;
+		overflow-x: hidden;
+	}
+
+	.header {
+		writing-mode: horizontal-tb;
+		font-size: 2rem;
+		width: 100%;
+		transform: none;
+		-webkit-box-reflect: unset;
+		margin-top: 50px;
+	}
+
+	.main_div {
+		flex-direction: column;
+		overflow: scroll;
+		height: auto;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.information {
+		width: 90%;
+		text-align: justify;
 	}
 }

@@ -126,14 +126,6 @@
 	margin-left: 5px;
 }
 
-.secondary_header {
-	text-decoration: none;
-	color: rgb(200, 200, 200);
-	font-size: 1.5em;
-	font-weight: bold;
-	display: flex;
-}
-
 #arrow {
 	margin: 0 0 0 10px;
 	font-weight: 900;

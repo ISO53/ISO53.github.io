@@ -18,3 +18,13 @@
 .hide_sphere {
 	opacity: 0;
 }
+
+@media (max-width: 768px) {
+	.canvas_div {
+		width: 300px;
+		height: 300px;
+		display: flex;
+		align-items: center;
+		justify-self: center;
+	}
+}

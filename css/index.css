@@ -13,5 +13,7 @@
 	.welcome p {
 		font-size: 1rem;
 		margin: 10px;
+		transform: translateY(75px);
+		margin-top: 25px;
 	}
 }

@@ -74,3 +74,11 @@ path:nth-child(6) {
 .hide_button {
 	display: none;
 }
+
+@media (max-width: 768px) {
+	.container {
+		transform: scale(60%);
+		top: -22px;
+		right: -10px;
+	}
+}
