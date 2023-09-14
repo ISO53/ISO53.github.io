@@ -1,111 +1,4 @@
 // ******************** Declare Variables ********************
-const exampleProject = {
-	id: 652569528,
-	node_id: "R_kgDOJuVruA",
-	name: "Backgammon-Game-Server-and-Client",
-	full_name: "ISO53/Backgammon-Game-Server-and-Client",
-	private: false,
-	owner: {
-		login: "ISO53",
-		id: 102249575,
-		node_id: "U_kgDOBhg0Zw",
-		avatar_url: "https://avatars.githubusercontent.com/u/102249575?v=4",
-		gravatar_id: "",
-		url: "https://api.github.com/users/ISO53",
-		html_url: "https://github.com/ISO53",
-		followers_url: "https://api.github.com/users/ISO53/followers",
-		following_url: "https://api.github.com/users/ISO53/following{/other_user}",
-		gists_url: "https://api.github.com/users/ISO53/gists{/gist_id}",
-		starred_url: "https://api.github.com/users/ISO53/starred{/owner}{/repo}",
-		subscriptions_url: "https://api.github.com/users/ISO53/subscriptions",
-		organizations_url: "https://api.github.com/users/ISO53/orgs",
-		repos_url: "https://api.github.com/users/ISO53/repos",
-		events_url: "https://api.github.com/users/ISO53/events{/privacy}",
-		received_events_url: "https://api.github.com/users/ISO53/received_events",
-		type: "User",
-		site_admin: false,
-	},
-	html_url: "https://github.com/ISO53/Backgammon-Game-Server-and-Client",
-	description:
-		"This project consists of a Java server that provides a multiplayer Backgammon game functionality, allowing clients to connect to a room and engage in interactive gameplay, with the client-side implemented using Electron.js.",
-	fork: false,
-	url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client",
-	forks_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/forks",
-	keys_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/keys{/key_id}",
-	collaborators_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/collaborators{/collaborator}",
-	teams_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/teams",
-	hooks_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/hooks",
-	issue_events_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/issues/events{/number}",
-	events_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/events",
-	assignees_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/assignees{/user}",
-	branches_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/branches{/branch}",
-	tags_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/tags",
-	blobs_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/git/blobs{/sha}",
-	git_tags_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/git/tags{/sha}",
-	git_refs_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/git/refs{/sha}",
-	trees_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/git/trees{/sha}",
-	statuses_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/statuses/{sha}",
-	languages_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/languages",
-	stargazers_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/stargazers",
-	contributors_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/contributors",
-	subscribers_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/subscribers",
-	subscription_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/subscription",
-	commits_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/commits{/sha}",
-	git_commits_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/git/commits{/sha}",
-	comments_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/comments{/number}",
-	issue_comment_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/issues/comments{/number}",
-	contents_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/contents/{+path}",
-	compare_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/compare/{base}...{head}",
-	merges_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/merges",
-	archive_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/{archive_format}{/ref}",
-	downloads_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/downloads",
-	issues_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/issues{/number}",
-	pulls_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/pulls{/number}",
-	milestones_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/milestones{/number}",
-	notifications_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/notifications{?since,all,participating}",
-	labels_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/labels{/name}",
-	releases_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/releases{/id}",
-	deployments_url: "https://api.github.com/repos/ISO53/Backgammon-Game-Server-and-Client/deployments",
-	created_at: "2023-06-12T10:42:59Z",
-	updated_at: "2023-08-31T13:03:27Z",
-	pushed_at: "2023-06-12T11:22:39Z",
-	git_url: "git://github.com/ISO53/Backgammon-Game-Server-and-Client.git",
-	ssh_url: "git@github.com:ISO53/Backgammon-Game-Server-and-Client.git",
-	clone_url: "https://github.com/ISO53/Backgammon-Game-Server-and-Client.git",
-	svn_url: "https://github.com/ISO53/Backgammon-Game-Server-and-Client",
-	homepage: null,
-	size: 7994,
-	stargazers_count: 1,
-	watchers_count: 1,
-	language: "Java",
-	has_issues: true,
-	has_projects: true,
-	has_downloads: true,
-	has_wiki: true,
-	has_pages: false,
-	has_discussions: false,
-	forks_count: 0,
-	mirror_url: null,
-	archived: false,
-	disabled: false,
-	open_issues_count: 0,
-	license: {
-		key: "gpl-3.0",
-		name: "GNU General Public License v3.0",
-		spdx_id: "GPL-3.0",
-		url: "https://api.github.com/licenses/gpl-3.0",
-		node_id: "MDc6TGljZW5zZTk=",
-	},
-	allow_forking: true,
-	is_template: false,
-	web_commit_signoff_required: false,
-	topics: [],
-	visibility: "public",
-	forks: 0,
-	open_issues: 0,
-	watchers: 1,
-	default_branch: "master",
-};
 let PROJECTS;
 let LANGUAGES = {};
 let LIST_SIZE;
@@ -128,11 +21,13 @@ function firstLoadAnimations() {
 	setTimeout(() => paragraph.classList.remove("hide"), 750);
 	setTimeout(() => buttons.classList.remove("hide"), 1000);
 	setTimeout(() => projectsDiv.classList.remove("hide"), 1000);
-	setTimeout(() => (projectsDiv.classList.add("perspective")), 1250);
+	setTimeout(() => projectsDiv.classList.add("perspective"), 1250);
 }
 
 function loadProjects() {
-	const apiUrl = "https://api.github.com/users/iso53/repos";
+	const apiUrl = "https://iso53-github-io-serverless.vercel.app/api/repos";
+	// https://iso53-github-io-serverless.vercel.app/api/repos 	[WITH AUTH]
+	// https://api.github.com/users/iso53/repos 				[NO AUTH]
 
 	fetch(apiUrl)
 		.then((response) => {
@@ -150,7 +45,10 @@ function loadProjects() {
 
 		projects.forEach((project) => {
 			// Load language
-			fetch(project.languages_url)
+
+			// https://iso53-github-io-serverless.vercel.app/api/languages?repo_name=project.name	[WITH AUTH]
+			// project.languages_url																[NO AUTH]
+			fetch(`https://iso53-github-io-serverless.vercel.app/api/languages?repo_name=${project.name}`)
 				.then((response) => response.json())
 				.then((data) => (LANGUAGES[project.id] = data))
 				.catch((error) => console.error("Error:", error));
