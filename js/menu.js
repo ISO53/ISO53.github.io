@@ -9,14 +9,18 @@ function menuButtonListener() {
 	let menuDiv = document.getElementById("menu_div");
 
 	button.addEventListener("click", () => {
-
-		if (menuDiv.style.display === "none") {
-			menuDiv.style.display = "block";
+		if (window.getComputedStyle(menuDiv).getPropertyValue("display") === "flex") {
+			setTimeout(() => (menuDiv.style.display = "none"), 500);
+		} else {
+			menuDiv.style.display = "flex";
 		}
 
-		button.classList.toggle("active");
-		menuDiv.classList.toggle("menu_div_active");
+		setTimeout(() => {
+			button.classList.toggle("active");
+			menuDiv.classList.toggle("menu_div_active");
+		}, 5);
 
+		// Animate menü elements
 		let menuList = document.getElementById("menu_items");
 		let liElements = menuList.getElementsByTagName("a");
 
@@ -26,8 +30,19 @@ function menuButtonListener() {
 			}, i * 50);
 		}
 
-		// if (menuDiv.style.display !== "none") {
-		// 	menuDiv.style.display = "none";
-		// }
+		// Animate social elements
+		let resources = document.getElementById("resources");
+		let resElements = resources.getElementsByTagName("a");
+
+		for (let i = 0; i < resElements.length; i++) {
+			setTimeout(() => {
+				resElements[i].classList.toggle("hide_resource");
+			}, i * 50);
+		}
 	});
+}
+
+function removeClickListeners(event) {
+	event.preventDefault();
+	event.stopPropagation();
 }
