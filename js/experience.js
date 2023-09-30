@@ -4,8 +4,10 @@ const experiences = [
 		company: "Deka Technology",
 		position: "Backend Developer",
 		img: "res/deka_technology_logo.png",
-		short_desc: "Still working as a backend developer intern.",
-		long_desc: "Still working as a backend developer intern.",
+		short_desc:
+			"During my internship as a backend developer, I specialized in DNS servers and developed software for log analysis, enhancing my expertise in system architecture and backend development.",
+		long_desc:
+			"During my internship as a backend developer, I embarked on a fascinating journey into the world of DNS servers, log analysis, and multithreaded server application programming. My primary task was to develop a robust DNS Log Analyzer program, which involved extensive work with Java, RabbitMQ, Elasticsearch, and various Java libraries. I meticulously researched and selected the most suitable libraries and frameworks, laying the groundwork for the project's architecture. This endeavor led me to explore the intricacies of RabbitMQ's Queue system and delve into Elasticsearch's cluster, node, shard, and analyzer concepts. One of the key challenges was ensuring data consistency and reliability, especially in the face of unexpected system interruptions. Through this internship, I honed my skills in system architecture, log analysis, and the development of multithreaded server applications. The experience has equipped me with a strong foundation in these technologies and ignited my passion for pursuing further opportunities in backend development.",
 		start_date: "August 2023",
 		end_date: "September 2023",
 	},
