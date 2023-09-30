@@ -4,6 +4,7 @@
 	height: 30px;
 	width: fit-content;
 	display: flex;
+	text-wrap: nowrap;
 	justify-content: center;
 	align-items: center;
 	padding: 3px 12px 3px 12px;
