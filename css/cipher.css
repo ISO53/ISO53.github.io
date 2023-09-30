@@ -10,16 +10,27 @@
 	height: 500px;
 	margin: 0 auto;
 	position: relative;
+
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .wheel {
 	position: absolute;
 	border-radius: 100%;
 	margin: 0 auto;
-	user-select: none;
 	transform: rotate(-6.2deg);
 	z-index: 1;
 	cursor: grab;
+
+	-webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .wheel_transition {
