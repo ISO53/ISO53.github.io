@@ -98,6 +98,7 @@
 		padding: 10px 0px 10px 0px;
 		border-bottom: 1px solid rgba(200, 200, 200, 0.2);
 		backdrop-filter: blur(10px);
+		z-index: 30;
 	}
 
 	.main_div {
