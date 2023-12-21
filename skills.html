@@ -1,128 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Discover my diverse skill set and expertise. Explore the abilities and competencies I've developed over the years, ranging from technical skills in programming and design to soft skills in communication and teamwork. Learn more about what I can bring to the table."
+        />
+        <title>Yusuf İhsan Şimşek • Skills</title>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Discover my diverse skill set and expertise. Explore the abilities and competencies I've developed over the years, ranging from technical skills in programming and design to soft skills in communication and teamwork. Learn more about what I can bring to the table." />
-	<title>Yusuf İhsan Şimşek • Skills</title>
+        <link rel="stylesheet" href="css/body.css" />
+        <link rel="stylesheet" href="css/default_page.css" />
+        <link rel="stylesheet" href="css/infinite_scroller.css" />
+        <link rel="stylesheet" href="css/menu_button.css" />
+        <link rel="stylesheet" href="css/menu.css" />
+        <link rel="stylesheet" href="css/tiny_box.css" />
+        <link rel="stylesheet" href="css/particle.css" />
 
-	<link rel="stylesheet" href="css/body.css">
-	<link rel="stylesheet" href="css/default_page.css">
-	<link rel="stylesheet" href="css/infinite_scroller.css">
-	<link rel="stylesheet" href="css/menu_button.css">
-	<link rel="stylesheet" href="css/menu.css">
-	<link rel="stylesheet" href="css/special_cursor.css">
-	<link rel="stylesheet" href="css/tiny_box.css">
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
 
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-34BGMM00GM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-34BGMM00GM"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag() { dataLayer.push(arguments); }
-	gtag('js', new Date());
+        gtag("config", "G-34BGMM00GM");
+    </script>
 
-	gtag('config', 'G-34BGMM00GM');
-</script>
+    <body>
+        <canvas id="particle-canvas"></canvas>
+        <div class="background">
+            <div class="menu_button" id="menu_button">
+                <div class="container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 200 200">
+                        <g class="icon" stroke-width="6.5" stroke-linecap="round">
+                            <path d="M72 82.286h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff" />
+                            <path
+                                d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+                                fill="none"
+                                stroke="#fff"
+                            />
+                            <path d="M72 125.143h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff" />
+                            <path
+                                d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+                                fill="none"
+                                stroke="#fff"
+                            />
+                            <path d="M100.75 82.286h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff" />
+                            <path d="M100.75 125.143h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
 
-<body>
-	<div class="background">
+            <div class="inner_background">
+                <div class="menu_div" id="menu_div">
+                    <ul class="menu_items" id="menu_items">
+                        <a href="about_me.html" class="menu_item hide_item" id="about_me_button">About Me</a>
+                        <a href="skills.html" class="menu_item hide_item" id="skills_button">Skills</a>
+                        <a href="experience.html" class="menu_item hide_item" id="experience_button">Experience</a>
+                        <a href="projects.html" class="menu_item hide_item" id="projects_button">Projects</a>
+                    </ul>
 
-		<div class="menu_button " id="menu_button">
-			<div class="container">
-				<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 200 200">
-					<g class="icon" stroke-width="6.5" stroke-linecap="round">
-						<path d="M72 82.286h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff" />
-						<path d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554" fill="none" stroke="#fff" />
-						<path d="M72 125.143h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff" />
-						<path d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554" fill="none" stroke="#fff" />
-						<path d="M100.75 82.286h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff" />
-						<path d="M100.75 125.143h28.75" fill="#009100" fill-rule="evenodd" stroke="#fff" />
-					</g>
-				</svg>
-			</div>
-		</div>
+                    <div class="resources" id="resources">
+                        <a href="https://www.linkedin.com/in/yusuf-ihsan-simsek/" target="_blank" class="resource hide_resource">
+                            <img class="resource_image" src="res/linkedin.svg" alt="linkedin logo" />
+                            <h2 class="resource_desc">Yusuf İhsan Şimşek</h2>
+                        </a>
 
-		<div class="inner_background">
+                        <a href="https://github.com/iso53" target="_blank" class="resource hide_resource">
+                            <img class="resource_image" src="res/github.svg" alt="github logo" />
+                            <h2 class="resource_desc">ISO53</h2>
+                        </a>
 
-			<div class="menu_div" id="menu_div">
-				
-				<ul class="menu_items" id="menu_items">
-					<a href="about_me.html" class="menu_item hide_item" id="about_me_button">About Me</a>
-					<a href="skills.html" class="menu_item hide_item" id="skills_button">Skills</a>
-					<a href="experience.html" class="menu_item hide_item" id="experience_button">Experience</a>
-					<a href="projects.html" class="menu_item hide_item" id="projects_button">Projects</a>
-				</ul>
+                        <a href="https://leetcode.com/ISO53/" target="_blank" class="resource hide_resource">
+                            <img class="resource_image" src="res/leetcode.svg" alt="leetcode logo" />
+                            <h2 class="resource_desc">ISO53</h2>
+                        </a>
 
-				<div class="resources" id="resources">
+                        <a href="https://monkeytype.com/profile/predator5335" target="_blank" class="resource hide_resource">
+                            <img class="resource_image" src="res/monkeytype.svg" alt="monkeytype logo" />
+                            <h2 class="resource_desc">predator5335</h2>
+                        </a>
 
-					<a href="https://www.linkedin.com/in/yusuf-ihsan-simsek/" target="_blank" class="resource hide_resource">
-						<img class="resource_image" src="res/linkedin.svg" alt="linkedin logo">
-						<h2 class="resource_desc">Yusuf İhsan Şimşek</h2>
-					</a>
+                        <a href="mailto:ihsansimsek5335@gmail.com" target="_blank" class="resource hide_resource">
+                            <img class="resource_image" src="res/mail.svg" alt="mail logo" />
+                            <h2 class="resource_desc">ihsansimsek5335@gmail.com</h2>
+                        </a>
 
-					<a href="https://github.com/iso53" target="_blank" class="resource hide_resource">
-						<img class="resource_image" src="res/github.svg" alt="github logo">
-						<h2 class="resource_desc">ISO53</h2>
-					</a>
+                        <a href="https://www.google.com/maps/place/%C4%B0stanbul" target="_blank" class="resource hide_resource">
+                            <img class="resource_image" src="res/home.svg" alt="home logo" />
+                            <h2 class="resource_desc">İstanbul / Turkey</h2>
+                        </a>
+                    </div>
+                </div>
 
-					<a href="https://leetcode.com/ISO53/" target="_blank" class="resource hide_resource">
-						<img class="resource_image" src="res/leetcode.svg" alt="leetcode logo">
-						<h2 class="resource_desc">ISO53</h2>
-					</a>
+                <div class="main_div">
+                    <h1 class="header hide_only_opacity" id="skills_header">SKILLS</h1>
 
-					<a href="https://monkeytype.com/profile/predator5335" target="_blank" class="resource hide_resource">
-						<img class="resource_image" src="res/monkeytype.svg" alt="monkeytype logo">
-						<h2 class="resource_desc">predator5335</h2>
-					</a>
+                    <div class="information">
+                        <h2 class="secondary_header hide" id="secondary_header">My Skills!</h2>
 
-					<a href="mailto:ihsansimsek5335@gmail.com" target="_blank" class="resource hide_resource">
-						<img class="resource_image" src="res/mail.svg" alt="mail logo">
-						<h2 class="resource_desc">ihsansimsek5335@gmail.com</h2>
-					</a>
+                        <p class="main_paragraph hide" id="skills_paragraph">
+                            Proficient in Java programming language, with expertise in object-oriented programming (OOP), design
+                            patterns, and backend development using SpringBoot for building REST APIs. Skilled in socket programming,
+                            performance optimization techniques, and implementing efficient algorithms to enhance application speed
+                            and scalability. Experienced in frontend development, utilizing HTML, CSS, and JavaScript to create
+                            visually appealing and user-friendly interfaces. Possess a strong understanding of data structures and
+                            their efficient implementation. Familiar with databases such as MongoDB, PostgreSQL, and OracleSQL, as
+                            well as containerization using Docker for seamless deployment. Proficient in Linux programming, shell
+                            management, UI/UX design principles, hosting, and cloud services like AWS and Google Firebase for
+                            scalable and reliable solutions. Experienced in Android app development using Java and proficient in
+                            Vue.js, for developing dynamic and interactive web applications. Also have a basic knowledge of Python
+                            programming, WordPress development and plugins, PL/SQL for Oracle databases, and SEO techniques for
+                            website optimization.
+                        </p>
+                    </div>
 
-					<a href="https://www.google.com/maps/place/%C4%B0stanbul" target="_blank" class="resource hide_resource">
-						<img class="resource_image" src="res/home.svg" alt="home logo">
-						<h2 class="resource_desc">İstanbul / Turkey</h2>
-					</a>
+                    <div class="skills_overflow_div">
+                        <div class="top_shadow_div"></div>
+                        <div class="skills_list_div hide" id="skills_list_div"></div>
+                        <div class="bottom_shadow_div"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-				</div>
-			</div>
-
-			<div class="main_div">
-
-				<h1 class="header hide_only_opacity" id="skills_header">SKILLS</h1>
-
-				<div class="information">
-					<h2 class="secondary_header hide" id="secondary_header">My Skills!</h2>
-
-					<p class="main_paragraph hide" id="skills_paragraph">Proficient in Java programming language, with expertise in object-oriented programming (OOP), design patterns, and backend development using SpringBoot for building REST APIs. Skilled in socket programming, performance optimization techniques, and implementing efficient algorithms to enhance application speed and scalability. Experienced in frontend development, utilizing HTML, CSS, and JavaScript to create visually appealing and user-friendly interfaces. Possess a strong understanding of data structures and their efficient implementation. Familiar with databases such as MongoDB, PostgreSQL, and OracleSQL, as well as containerization using Docker for seamless deployment. Proficient in Linux programming, shell management, UI/UX design principles, hosting, and cloud services like AWS and Google Firebase for scalable and reliable solutions. Experienced in Android app development using Java and proficient in Vue.js, for developing dynamic and interactive web applications. Also have a basic knowledge of Python programming, WordPress development and plugins, PL/SQL for Oracle databases, and SEO techniques for website optimization.</p>
-				</div>
-
-				<div class="skills_overflow_div">
-					<div class="top_shadow_div"></div>
-					<div class="skills_list_div hide" id="skills_list_div"></div>
-					<div class="bottom_shadow_div"></div>
-				</div>
-
-			</div>
-
-		</div>
-
-	</div>
-
-	<div id="mouse_circle"></div>
-    <div id="mouse_dot"></div>
-
-	<script src="js/skills.js"></script>
-	<script src="js/menu.js"></script>
-	<script src="js/special_cursor.js"></script>
-</body>
-
+        <script src="js/skills.js"></script>
+        <script src="js/menu.js"></script>
+        <script src="js/particle.js"></script>
+    </body>
 </html>
