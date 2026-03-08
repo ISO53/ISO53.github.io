@@ -173,6 +173,8 @@ watch(() => props.visible, async (newVal) => {
   }
 })
 
+const API_BASE_URL = 'https://iso53-github-io-serverless.vercel.app'
+
 const fetchLanguages = async () => {
   if (!props.repo) return
   langsLoading.value = true
@@ -180,7 +182,7 @@ const fetchLanguages = async () => {
   langs.value = []
 
   try {
-    const res = await fetch(`/api/languages?repo_name=${props.repo.name}`)
+    const res = await fetch(`${API_BASE_URL}/api/languages?repo_name=${props.repo.name}`)
     if (!res.ok) throw new Error('Failed to fetch languages')
 
     const data = await res.json()
@@ -211,7 +213,7 @@ const fetchReadme = async () => {
   readmeHtml.value = ''
 
   try {
-    const res = await fetch(`/api/readme?repo_name=${props.repo.name}`)
+    const res = await fetch(`${API_BASE_URL}/api/readme?repo_name=${props.repo.name}`)
     if (!res.ok) throw new Error('Failed to fetch readme')
 
     const rawMarkdown = await res.text()

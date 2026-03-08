@@ -84,9 +84,11 @@ const filteredRepos = computed(() => {
   })
 })
 
+const API_BASE_URL = 'https://iso53-github-io-serverless.vercel.app'
+
 const fetchRepos = async () => {
   try {
-    const res = await fetch('/api/repos')
+    const res = await fetch(`${API_BASE_URL}/api/repos`)
     if (!res.ok) throw new Error('Network response was not ok')
     const data = await res.json()
     // Ensure sorted by stargazers_count desc (API already does this, but good to ensure)
