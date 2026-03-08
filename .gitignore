@@ -37,4 +37,4 @@ build/
 .gradle/
 
 ### npm libraries ###
-.node_modules/
+.node_modules
